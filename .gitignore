@@ -35,3 +35,9 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Log Files
+*.log
+
+# Misc
+UserSettings/EditorUserSettings.asset
