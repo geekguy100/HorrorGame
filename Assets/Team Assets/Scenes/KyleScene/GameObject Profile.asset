@@ -57,7 +57,7 @@ MonoBehaviour:
     m_Value: 0
   maximumHeight:
     m_OverrideState: 1
-    m_Value: 6.45
+    m_Value: 40.54
   meanFreePath:
     m_OverrideState: 0
     m_Value: 282.86
