@@ -7,8 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: c8e29ca107f2ca24996a37f4fbdcc6d9, type: 2}
+      name: RoughPainted
+    second: {fileID: 2100000, guid: f4b2c09c04df0614b851f7aba1017edc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodGrainHorizontal
+    second: {fileID: 2100000, guid: aecc3232764d21a49af899500948e70d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodGrainVertical
+    second: {fileID: 2100000, guid: 8857585b5bdd61e4ba5e23a2dc2ef49c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPaneling.001
+    second: {fileID: 2100000, guid: 57cfadd070e877e49827dbaba882a0fb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
