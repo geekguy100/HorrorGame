@@ -50,6 +50,11 @@ public class Headbob : MonoBehaviour
             headPosLocal.y = (Mathf.Sin(counter * frequency) * amplitude) + startingYPos;
             head.localPosition = headPosLocal;
         }
+        else if (headPosLocal.y != startingYPos)
+        {
+            headPosLocal.y = startingYPos;
+            head.localPosition = headPosLocal;
+        }
     }
 
     private void IncrementCounter()
