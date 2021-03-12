@@ -1,9 +1,9 @@
 /*****************************************************************************
 // File Name :         MouseLook.cs
 // Author :            Kyle Grenier
-// Creation Date :     #CREATIONDATE#
+// Creation Date :     03/11/2021
 //
-// Brief Description : ADD BRIEF DESCRIPTION OF THE FILE HERE
+// Brief Description : Enables character roation with the mouse.
 *****************************************************************************/
 using UnityEngine;
 
@@ -22,15 +22,17 @@ public class MouseLook : MonoBehaviour
     //Taken from the child of this object.
     private Transform head;
 
-    private void Start()
+    private void Awake()
     {
         head = GetComponentInChildren<Camera>().transform;
         bodyStartRotation = transform.localRotation;
         headStartRotation = head.localRotation;
+    }
 
+    private void Start()
+    {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
     }
 
     private void FixedUpdate()
@@ -50,5 +52,10 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = bodyRotation * bodyStartRotation;
         head.localRotation = headRotation * headStartRotation;
+    }
+
+    public Transform GetHead()
+    {
+        return head;
     }
 }

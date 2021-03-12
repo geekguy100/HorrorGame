@@ -19,13 +19,14 @@ public class CharacterMovement : MonoBehaviour
     // The CharacterController component.
     private CharacterController characterController;
 
-    private Vector3 playerVelocity;
+    // The velocity of the character.
+    private Vector3 characterVelocity;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
     }
-    
+
     /// <summary>
     /// Moves the character with the provided movement direction.
     /// </summary>
@@ -33,12 +34,13 @@ public class CharacterMovement : MonoBehaviour
     public void Move(Vector3 dir)
     {
         // Make sure we set our y-velocity to 0 if we're grounded so we don't
-        if (characterController.isGrounded && playerVelocity.y < 0f)
-            playerVelocity.y = 0;
+        // build up momentum over time.
+        if (characterController.isGrounded && characterVelocity.y < 0f)
+            characterVelocity.y = 0;
 
         characterController.Move(dir * speed * Time.deltaTime);
 
-        playerVelocity.y += gravity * Time.deltaTime;
-        characterController.Move(playerVelocity * Time.deltaTime);
+        characterVelocity.y += gravity * Time.deltaTime;
+        characterController.Move(characterVelocity * Time.deltaTime);
     }
 }

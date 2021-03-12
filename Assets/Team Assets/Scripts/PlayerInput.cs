@@ -1,9 +1,9 @@
 /*****************************************************************************
 // File Name :         PlayerInput.cs
 // Author :            Kyle Grenier
-// Creation Date :     #CREATIONDATE#
+// Creation Date :     03/09/2021
 //
-// Brief Description : ADD BRIEF DESCRIPTION OF THE FILE HERE
+// Brief Description : Handles getting player input.
 *****************************************************************************/
 using UnityEngine;
 
@@ -29,5 +29,14 @@ public class PlayerInput : MonoBehaviour
         input = transform.TransformDirection(input);
 
         characterMovement.Move(input);
+    }
+
+    /// <summary>
+    /// Is the player controlling the character?
+    /// </summary>
+    /// <returns>True if the player is controlling the character.</returns>
+    public bool IsMoving()
+    {
+        return (input != Vector3.zero);
     }
 }
