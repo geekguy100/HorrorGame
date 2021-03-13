@@ -10,17 +10,26 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class CharacterMovement : MonoBehaviour
 {
+    #region --- Serialized Fields ---
     [Tooltip("The character's movement speed.")]
     [SerializeField] private float speed;
 
     [Tooltip("The amount of gravity the affects this character.")]
     [SerializeField] private float gravity = -9.81f;
-    
+
+    #endregion
+    #region --- Private Fields ---
+
     // The CharacterController component.
     private CharacterController characterController;
 
     // The velocity of the character.
     private Vector3 characterVelocity;
+
+    // True if the character is moving.
+    private bool isMoving;
+
+    #endregion
 
     private void Awake()
     {
@@ -39,8 +48,24 @@ public class CharacterMovement : MonoBehaviour
             characterVelocity.y = 0;
 
         characterController.Move(dir * speed * Time.deltaTime);
+        isMoving = (dir.magnitude > 0) ? true : false;
 
         characterVelocity.y += gravity * Time.deltaTime;
         characterController.Move(characterVelocity * Time.deltaTime);
+    }
+
+    public bool IsGrounded()
+    {
+        return characterController.isGrounded;
+    }
+
+    public bool IsMoving()
+    {
+        return isMoving;
+    }
+
+    public float GetSpeed()
+    {
+        return speed;
     }
 }
