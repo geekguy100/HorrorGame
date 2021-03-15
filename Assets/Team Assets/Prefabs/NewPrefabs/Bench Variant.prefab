@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &2394300405381137965
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675969130590027728}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.017595554, y: 0.0030108476, z: 0.0043638926}
+  m_Center: {x: -0.00000254903, y: 1.1641535e-10, z: 0.0022715195}
 --- !u!1001 &1982521558657892993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53,7 +66,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a3e087e9992a43b44b5890b094d71365, type: 3}
       propertyPath: m_Name
-      value: Bench
+      value: Bench Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3e087e9992a43b44b5890b094d71365, type: 3}
+--- !u!1 &1675969130590027728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a3e087e9992a43b44b5890b094d71365, type: 3}
+  m_PrefabInstance: {fileID: 1982521558657892993}
+  m_PrefabAsset: {fileID: 0}
