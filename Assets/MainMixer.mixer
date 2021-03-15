@@ -14,6 +14,39 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &-620033849270679603
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 10fa3cd672433794d887f2c2aa04eb6a
+  m_EffectName: Attenuation
+  m_MixLevel: e432f97a8fc62c947bc8e262fb498619
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-397547165694546623
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ambiance
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 4d6a494ea2296094b9627da5f4e885c5
+  m_Children: []
+  m_Volume: ca972f04054bdbd469f095ecf102cf50
+  m_Pitch: 368c9604831f78040a8ba1a2ec9d2a32
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -620033849270679603}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -34,6 +67,7 @@ AudioMixerController:
   - guids:
     - 080cdfdb42acccc4c88cafbaa36eb416
     - 9b698f199242c004d9ee8f8f64d5f434
+    - 4d6a494ea2296094b9627da5f4e885c5
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -48,6 +82,7 @@ AudioMixerGroupController:
   m_GroupID: 080cdfdb42acccc4c88cafbaa36eb416
   m_Children:
   - {fileID: 7373110967332144276}
+  - {fileID: -397547165694546623}
   m_Volume: b3a649d58031afb43a9beca09cf83b96
   m_Pitch: 879301f4f2c5d044eb7156c54de65528
   m_Send: 00000000000000000000000000000000
@@ -83,6 +118,7 @@ AudioMixerSnapshotController:
   m_SnapshotID: 2aa0036359f02b047b8204574e18b9c1
   m_FloatValues:
     c2b8bde1c8385f340ba28b59c47271c0: -355
+    ca972f04054bdbd469f095ecf102cf50: -15.421314
     b2882754da19b0145a925ff7fb9eb38a: 0.02
     879301f4f2c5d044eb7156c54de65528: 1
     979cf3c8d90d03241a3189dcecd51148: -847
