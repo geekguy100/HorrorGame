@@ -21944,7 +21944,7 @@ AudioSource:
   m_GameObject: {fileID: 748587091}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5071920864165980545, guid: 039dea5fb0d887f4dac4ed16ad977ce9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 209e37fc1b57f734ea3ad41df11b00d8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -62461,7 +62461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1234683777380568639}
   m_Layer: 0
-  m_Name: Spotlight_Spot_01a_lamp (3)
+  m_Name: Chapel Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
