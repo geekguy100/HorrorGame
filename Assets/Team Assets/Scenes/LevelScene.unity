@@ -57043,7 +57043,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3918114201081970783, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
       propertyPath: requiredDistance
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4220584989347107669, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
       propertyPath: m_Name

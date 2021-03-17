@@ -28,18 +28,17 @@ public class Footsteps : MonoBehaviour
 
     private void Update()
     {
-        // Make sure to only track distance if the character is moving AND grounded.
-        if (characterMovement.IsMoving() && characterMovement.IsGrounded())
+        if (characterMovement.IsMoving())
         {
-            distanceTraveled += characterMovement.GetSpeed() * Time.deltaTime * 0.5f;
-
-            // If we move far enough, play a footstep sound and reset our counter.
+            distanceTraveled += Time.deltaTime * characterMovement.GetSpeed();
             if (distanceTraveled > requiredDistance)
             {
                 PlayRandomFootstep();
-                distanceTraveled = 0;
+                distanceTraveled = 0f;
             }
         }
+        else if (distanceTraveled != 0f)
+            distanceTraveled = 0f;
     }
 
     private void PlayRandomFootstep()

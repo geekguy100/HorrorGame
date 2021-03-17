@@ -36,6 +36,7 @@ public class CharacterMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
+    private float distanceTraveled = 0f;
     /// <summary>
     /// Moves the character with the provided movement direction.
     /// </summary>
@@ -47,8 +48,9 @@ public class CharacterMovement : MonoBehaviour
         if (characterController.isGrounded && characterVelocity.y < 0f)
             characterVelocity.y = 0;
 
-        characterController.Move(dir * speed * Time.deltaTime);
         isMoving = (dir.magnitude > 0) ? true : false;
+
+        characterController.Move(dir * speed * Time.deltaTime);
 
         characterVelocity.y += gravity * Time.deltaTime;
         characterController.Move(characterVelocity * Time.deltaTime);
