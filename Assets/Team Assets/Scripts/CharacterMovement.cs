@@ -36,7 +36,6 @@ public class CharacterMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
-    private float distanceTraveled = 0f;
     /// <summary>
     /// Moves the character with the provided movement direction.
     /// </summary>
