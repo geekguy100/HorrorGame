@@ -28,9 +28,9 @@ public abstract class SpecificRotationEvent : MonoBehaviour, InGameEvent
 
         float distance = Vector3.Distance(playerCamera.rotation.eulerAngles, requiredRotation);
         
-        //print(distance);
+        print(distance);
 
-        if (distance < 5f)
+        if (distance < 7f)
         {
             RunEvent();
             return true;
