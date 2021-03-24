@@ -10,7 +10,6 @@ using UnityEngine;
 public class EventChecker : MonoBehaviour
 {
     private InGameEvent gameEvent;
-    private GameObject player = null;
 
     private void Awake()
     {
@@ -22,40 +21,40 @@ public class EventChecker : MonoBehaviour
         }
     }
 
-    // --- No OnTriggerStay ---
-    private void OnTriggerEnter(Collider col)
-    {
-        if (player == null && col.CompareTag("Player"))
-            player = col.gameObject;
-    }
-
-    private void OnTriggerExit(Collider col)
-    {
-        if (player != null && col.CompareTag("Player"))
-            player = null;
-    }
-
-    private void Update()
-    {
-        if (player != null)
-        {
-            bool executed = gameEvent.Execute(player);
-
-            if (executed)
-                Destroy(gameObject);
-        }
-    }
-
-    // --- OnTriggerStay Alternative---
-    //private void OnTriggerStay(Collider col)
+    // --- No OnTriggerStay --- Uses Update() and OnTriggerEnter and Exit ---
+    //private GameObject player = null;
+    //private void OnTriggerEnter(Collider col)
     //{
-    //    if (col.CompareTag("Player"))
-    //    {
-    //        bool executed = gameEvent.Execute(col.gameObject);
+    //    if (player == null && col.CompareTag("Player"))
+    //        player = col.gameObject;
+    //}
 
-    //        // If the event executed successfully, destroy this game object.
+    //private void OnTriggerExit(Collider col)
+    //{
+    //    if (player != null && col.CompareTag("Player"))
+    //        player = null;
+    //}
+
+    //private void Update()
+    //{
+    //    if (player != null)
+    //    {
+    //        bool executed = gameEvent.Execute(player);
+
     //        if (executed)
     //            Destroy(gameObject);
     //    }
     //}
+
+    private void OnTriggerStay(Collider col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            bool executed = gameEvent.Execute(col.gameObject);
+
+            // If the event executed successfully, destroy this game object.
+            if (executed)
+                Destroy(gameObject);
+        }
+    }
 }

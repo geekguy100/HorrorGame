@@ -9,7 +9,11 @@ using UnityEngine;
 
 public class ShadowPersonDart : SpecificRotationEvent
 {
+    [Tooltip("The Animator of the shadow person to dart.")]
     [SerializeField] private Animator shadowPersonAnimator;
+
+    [Tooltip("The audio clip to play when the animation is played.")]
+    [SerializeField] private AudioClip audioClip;
 
     /// <summary>
     /// Invoked when the player is rotated properly.
@@ -18,5 +22,6 @@ public class ShadowPersonDart : SpecificRotationEvent
     {
         shadowPersonAnimator.gameObject.SetActive(true);
         shadowPersonAnimator.SetTrigger("Dart");
+        EventAudioManager.instance.PlayOneShot(audioClip);
     }
 }
