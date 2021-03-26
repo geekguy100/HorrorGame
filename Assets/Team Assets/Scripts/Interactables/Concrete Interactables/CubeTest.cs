@@ -9,17 +9,17 @@ using UnityEngine;
 
 public class CubeTest : MonoBehaviour, IInteractable
 {
-    public void InRangeAction()
+    public void InRangeAction(GameObject interactor)
     {
         print("LOOKING at CHUBE");
     }
 
-    public void Interact()
+    public void Interact(GameObject interactor)
     {
         print("INTERACTING WITH CUBE");
     }
 
-    public void TurnOff()
+    public void OutOfRangeAction(GameObject interactor)
     {
         print("CUBE AWAY NOW");
     }

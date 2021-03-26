@@ -19,7 +19,7 @@ public abstract class IInteractor : MonoBehaviour
     public void SetInteractable(IInteractable interactable)
     {
         this.interactable = interactable;
-        interactable.InRangeAction();
+        interactable.InRangeAction(gameObject);
     }
 
     /// <summary>
@@ -36,7 +36,7 @@ public abstract class IInteractor : MonoBehaviour
     /// </summary>
     public void UnassignInteractable()
     {
-        interactable.TurnOff();
+        interactable.OutOfRangeAction(gameObject);
         interactable = null;
     }
 
@@ -45,6 +45,6 @@ public abstract class IInteractor : MonoBehaviour
     /// </summary>
     public void PerformInteraction()
     {
-        interactable?.Interact();
+        interactable?.Interact(gameObject);
     }
 }

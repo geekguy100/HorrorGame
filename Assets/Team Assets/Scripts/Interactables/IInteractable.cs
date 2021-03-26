@@ -5,10 +5,11 @@
 //
 // Brief Description : Interface for all iteractables.
 *****************************************************************************/
+using UnityEngine;
 
 public interface IInteractable
 {
-    void Interact();
-    void TurnOff();
-    void InRangeAction();
+    void Interact(GameObject interactor);
+    void OutOfRangeAction(GameObject interactor);
+    void InRangeAction(GameObject interactor);
 }

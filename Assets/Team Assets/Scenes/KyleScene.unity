@@ -2798,6 +2798,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6764385665276011998, guid: 27d2eeb0bf490254d8c16c0189eec64d, type: 3}
   m_PrefabInstance: {fileID: 398555158}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &402904044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 402904045}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &402904045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402904044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.47, y: 2.26, z: -15.12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &428112071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3652,7 +3682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 196.1518, y: -14.433136}
+  m_AnchoredPosition: {x: 196.15181, y: -14.43315}
   m_SizeDelta: {x: 392.3036, y: 28.8663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &515512593
@@ -3698,7 +3728,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 515512594}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 622807456}
+        m_TargetAssemblyTypeName: RestroomMirror, Assembly-CSharp
+        m_MethodName: Teleport
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 402904045}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &515512594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4990,6 +5032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a9b80809f9796449353e02fdd25fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeBeforeTeleport: 2
 --- !u!1001 &638551308
 PrefabInstance:
   m_ObjectHideFlags: 0

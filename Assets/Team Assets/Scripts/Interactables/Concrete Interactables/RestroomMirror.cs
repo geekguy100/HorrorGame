@@ -6,20 +6,26 @@
 // Brief Description : Behaviour for interacting with the restroom mirrors
 *****************************************************************************/
 using UnityEngine;
+using System.Collections;
 
 public class RestroomMirror : MonoBehaviour, IInteractable
 {
     private bool displayingUI = false;
+    private GameObject interactor;
 
-    public void InRangeAction()
+    [Tooltip("The time to wait in seconds before teleporting the interactor.")]
+    [SerializeField] private float timeBeforeTeleport = 2f;
+
+    public void InRangeAction(GameObject interactor)
     {
         // TODO: Highlight the mirror.
+        this.interactor = interactor;
     }
 
     /// <summary>
     /// Invoked when the player interacts with the mirror.
     /// </summary>
-    public void Interact()
+    public void Interact(GameObject interactor)
     {
         print("Interacted with the mirror.");
         displayingUI = EventManager.MirrorInteracted(!displayingUI);
@@ -28,11 +34,30 @@ public class RestroomMirror : MonoBehaviour, IInteractable
     /// <summary>
     /// Invoked when the player leaves the mirror's proximity.
     /// </summary>
-    public void TurnOff()
+    public void OutOfRangeAction(GameObject interactor)
     {
-        print("mirror off");
         displayingUI = EventManager.MirrorInteracted(false);
+        interactor = null;
     }
 
-    // TODO: Put button methods here.
+    #region --- Button Clicking ---
+    /// <summary>
+    /// Initiates the teleportation sequence.
+    /// </summary>
+    public void Teleport(Transform teleportTransform)
+    {
+        StartCoroutine(TeleportToMirror(teleportTransform));
+    }
+    
+    /// <summary>
+    /// Teleports the interactor to the specified Transform's position.
+    /// </summary>
+    /// <param name="teleportTransform">The Transform to teleport to.</param>
+    private IEnumerator TeleportToMirror(Transform teleportTransform)
+    {
+        // TODO: Fancy effects and whatnot.
+        yield return new WaitForSeconds(timeBeforeTeleport);
+        interactor.transform.position = teleportTransform.position;
+    }
+    #endregion
 }
