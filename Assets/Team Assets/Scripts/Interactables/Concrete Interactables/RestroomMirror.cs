@@ -7,9 +7,14 @@
 *****************************************************************************/
 using UnityEngine;
 
-public class RestroomMirror : MonoBehaviour, IOffInteractable
+public class RestroomMirror : MonoBehaviour, IInteractable
 {
     private bool displayingUI = false;
+
+    public void InRangeAction()
+    {
+        // TODO: Highlight the mirror.
+    }
 
     /// <summary>
     /// Invoked when the player interacts with the mirror.
