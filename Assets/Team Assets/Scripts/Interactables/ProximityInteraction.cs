@@ -23,7 +23,6 @@ public class ProximityInteraction : MonoBehaviour
         IInteractable interactable = col.GetComponent<IInteractable>();
         if (interactable != null)
         {
-            print("PROX interactable in");
             interactor.SetInteractable(interactable);
         }
     }

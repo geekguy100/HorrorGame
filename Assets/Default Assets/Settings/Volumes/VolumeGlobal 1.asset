@@ -235,7 +235,7 @@ MonoBehaviour:
     max: 1
   m_RayMaxIterations:
     m_OverrideState: 1
-    m_Value: 48
+    m_Value: 32
   m_RayLength:
     m_OverrideState: 1
     m_Value: 50
