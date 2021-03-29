@@ -12,6 +12,8 @@ public static class EventManager
     public static event Action<IInteractable> OnInteractableInteracted;
     public static event Predicate<bool> OnMirrorInteracted;
 
+    public static event Action<JournalPage> OnPagePickup;
+
     /// <summary>
     /// Invoked when the player interacts with an IInteractable.
     /// </summary>
@@ -32,5 +34,10 @@ public static class EventManager
             return OnMirrorInteracted.Invoke(turnOn);
         else
             return false;
+    }
+
+    public static void PagePickup(JournalPage page)
+    {
+        OnPagePickup?.Invoke(page);
     }
 }
