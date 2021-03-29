@@ -12,6 +12,7 @@ public class RestroomMirror : MonoBehaviour, IInteractable
 {
     private bool displayingUI = false;
     private GameObject interactor;
+    private bool teleporting = false;
 
     [Tooltip("The time to wait in seconds before teleporting the interactor.")]
     [SerializeField] private float timeBeforeTeleport = 2f;
@@ -27,6 +28,9 @@ public class RestroomMirror : MonoBehaviour, IInteractable
     /// </summary>
     public void Interact(GameObject interactor)
     {
+        if (teleporting)
+            return;
+
         print("Interacted with the mirror.");
         displayingUI = EventManager.MirrorInteracted(!displayingUI);
     }
@@ -55,9 +59,15 @@ public class RestroomMirror : MonoBehaviour, IInteractable
     /// <param name="teleportTransform">The Transform to teleport to.</param>
     private IEnumerator TeleportToMirror(Transform teleportTransform)
     {
+        displayingUI = EventManager.MirrorInteracted(false);
+        teleporting = true;
         // TODO: Fancy effects and whatnot.
+        float initialFogDepth = VolumeHandler.GetFogDepth();
+        StartCoroutine(VolumeHandler.SetFogOverTime(1f, timeBeforeTeleport));
         yield return new WaitForSeconds(timeBeforeTeleport);
         interactor.transform.position = teleportTransform.position;
+        StartCoroutine(VolumeHandler.SetFogOverTime(initialFogDepth, 2f));
+        teleporting = false;
     }
     #endregion
 }

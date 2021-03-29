@@ -5,7 +5,7 @@
 //
 // Brief Description : Handles updating field of the current volume.
 *****************************************************************************/
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
@@ -36,6 +36,21 @@ public static class VolumeHandler
     public static bool HasVolume()
     {
         return currentVolume != null;
+    }
+
+    public static IEnumerator SetFogOverTime(float finalDepth, float time)
+    {
+        if (fog == null)
+            yield break;
+
+        float initalValue = fog.meanFreePath.value;
+        float counter = 0;
+        while (counter < time)
+        {
+            counter += Time.deltaTime;
+            fog.meanFreePath.value = Mathf.Lerp(initalValue, finalDepth, counter / time);
+            yield return null;
+        }
     }
 
     /// <summary>

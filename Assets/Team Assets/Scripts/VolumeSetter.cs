@@ -12,7 +12,7 @@ public class VolumeSetter : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         // We collided with a volume.
-        if (VolumeHandler.HasVolume() && col.gameObject.CompareTag("Volume"))
+        if (/*VolumeHandler.HasVolume() && */col.gameObject.CompareTag("Volume"))
         {
             VolumeHandler.SetVolume(col.gameObject);
         }
