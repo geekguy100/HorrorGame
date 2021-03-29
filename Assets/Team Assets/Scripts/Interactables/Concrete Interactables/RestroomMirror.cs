@@ -17,6 +17,8 @@ public class RestroomMirror : MonoBehaviour, IInteractable
     [Tooltip("The time to wait in seconds before teleporting the interactor.")]
     [SerializeField] private float timeBeforeTeleport = 2f;
 
+    [SerializeField] private AudioClip teleportSound;
+
     public void InRangeAction(GameObject interactor)
     {
         // TODO: Highlight the mirror.
@@ -60,6 +62,7 @@ public class RestroomMirror : MonoBehaviour, IInteractable
     private IEnumerator TeleportToMirror(Transform teleportTransform)
     {
         displayingUI = EventManager.MirrorInteracted(false);
+        EventAudioManager.instance.PlayOneShot(teleportSound);
         teleporting = true;
         // TODO: Fancy effects and whatnot.
         float initialFogDepth = VolumeHandler.GetFogDepth();

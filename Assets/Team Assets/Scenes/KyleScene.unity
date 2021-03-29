@@ -3873,7 +3873,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 196.1518, y: -14.43315}
+  m_AnchoredPosition: {x: 196.1518, y: -14.433136}
   m_SizeDelta: {x: 392.3036, y: 28.8663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &515512593
@@ -5224,6 +5224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBeforeTeleport: 2
+  teleportSound: {fileID: 8300000, guid: 24390bd70dbd0ad469496a265e6160cb, type: 3}
 --- !u!1001 &638551308
 PrefabInstance:
   m_ObjectHideFlags: 0
