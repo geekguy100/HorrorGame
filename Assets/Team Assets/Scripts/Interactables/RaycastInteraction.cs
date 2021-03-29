@@ -40,10 +40,10 @@ public class RaycastInteraction : MonoBehaviour
     private void CheckForInteractables()
     {
         // Check to see if we hit an IInteractable.
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, rayLength, whatIsInteractable))
+        if (Physics.Raycast(origin.transform.position, origin.transform.forward, out RaycastHit hit, rayLength, whatIsInteractable))
         {
             interactable = hit.collider.gameObject.GetComponent<IInteractable>();
-            if (interactable != null && interactor.GetInteractable() != interactable) // Only assign the IInteractable if it is new.
+            if (interactable != null && interactor.GetInteractable() != interactable)       // Only assign the IInteractable if it is new.
                 interactor.SetInteractable(interactable);
             else if (interactable == null)
                 Debug.Log("Why is " + hit.collider.gameObject.name + " on the Interactable layer? No IInteractable component is present...");
