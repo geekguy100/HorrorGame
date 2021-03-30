@@ -39,9 +39,16 @@ public abstract class SpecificRotationEvent : MonoBehaviour, InGameEvent
             rot.z += 360f;
 
         float distance = Vector3.Distance(rot, requiredRotation);
-        print(distance);
 
-        if (distance < rotationForgiveness)
+        Vector3 rot2 = requiredRotation;
+        rot2.x += 360f;
+        rot2.y += 360f;
+        rot2.z += 360f;
+
+        float distance2 = Vector3.Distance(rot, rot2);
+        print(distance2);
+
+        if (distance < rotationForgiveness || distance2 < rotationForgiveness)
         {
             RunEvent(player);
             return true;
