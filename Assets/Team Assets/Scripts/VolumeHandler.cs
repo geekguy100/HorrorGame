@@ -56,6 +56,32 @@ public static class VolumeHandler
         }
     }
 
+    public static IEnumerator SetFogOverTime(Volume[] volumes, float finalDepth, float time)
+    {
+        Fog[] fogs = new Fog[volumes.Length];
+
+        for (int i = 0; i < fogs.Length; ++i)
+        {
+            volumes[i].profile.TryGet(out fogs[i]);
+
+            volumes[i].gameObject.SetActive(false);
+            volumes[i].gameObject.SetActive(true);
+        }
+
+        float initalValue = fogs[0].meanFreePath.value;
+        float counter = 0;
+        while (counter < time)
+        {
+            counter += Time.deltaTime;
+            foreach (Fog fog in fogs)
+            {
+                fog.meanFreePath.value = Mathf.Lerp(initalValue, finalDepth, counter / time);
+            }
+
+            yield return null;
+        }
+    }
+
     /// <summary>
     /// Updates the fog's attenuation distance to the given value if
     /// the fog override exists on the current volume.
@@ -75,6 +101,17 @@ public static class VolumeHandler
     /// <returns>The fog's attenuation distance or -1 if the fog is null.</returns>
     public static float GetFogDepth()
     {
+        if (fog != null)
+            return fog.meanFreePath.value;
+        else
+            return -1;
+    }
+
+    public static float GetFogDepth(Volume vol)
+    {
+        Fog fog = null;
+        vol.profile.TryGet(out fog);
+
         if (fog != null)
             return fog.meanFreePath.value;
         else

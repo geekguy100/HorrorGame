@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pageNotification;
     [SerializeField] private TextMeshProUGUI winText;
 
+    private bool teleporting = false;
+
 
     private List<UIWindow> openWindows = new List<UIWindow>();
 
@@ -31,6 +33,9 @@ public class UIManager : MonoBehaviour
         EventManager.OnPagePickup += TogglePageNotification;
 
         EventManager.OnJournalComplete += ToggleWinText;
+
+        EventManager.OnMirrorTeleport += OnTeleport;
+        EventManager.OnTeleportEnd += OnTeleportEnd;
     }
 
     private void OnDisable()
@@ -41,6 +46,9 @@ public class UIManager : MonoBehaviour
         EventManager.OnPagePickup -= TogglePageNotification;
 
         EventManager.OnJournalComplete -= ToggleWinText;
+
+        EventManager.OnMirrorTeleport -= OnTeleport;
+        EventManager.OnTeleportEnd -= OnTeleportEnd;
     }
 
     #endregion
@@ -55,6 +63,17 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void OnTeleport()
+    {
+        ToggleTeleportUI(false);
+        teleporting = true;
+    }
+
+    private void OnTeleportEnd()
+    {
+        teleporting = false;
+    }
+
     /// <summary>
     /// Toggles displaying the teleport UI and locks/unlocks the cursor.
     /// </summary>
@@ -62,6 +81,9 @@ public class UIManager : MonoBehaviour
     /// <returns>True if the mirror UI was enabled.</returns>
     private bool ToggleTeleportUI(bool turnOn)
     {
+        if (teleporting)
+            return false;
+
         if (turnOn)
         {
             teleportPanel.SetActive(true);

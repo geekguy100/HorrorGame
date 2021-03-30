@@ -13690,8 +13690,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.852972, y: 4.0622325, z: 9.934739}
-  m_Center: {x: 0.058220863, y: -0.25195575, z: -0.009690762}
+  m_Size: {x: 6.852972, y: 4.0622325, z: 13.849356}
+  m_Center: {x: 0.058220863, y: -0.25195575, z: -1.966999}
 --- !u!1001 &375866284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14332,7 +14332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 196.15186, y: -14.433105}
+  m_AnchoredPosition: {x: 196.15186, y: -14.43315}
   m_SizeDelta: {x: 392.3036, y: 28.8663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &387720884
@@ -39028,6 +39028,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBeforeTeleport: 2
   teleportSound: {fileID: 8300000, guid: 24390bd70dbd0ad469496a265e6160cb, type: 3}
+  bathroomVolumes:
+  - {fileID: 371780331}
+  - {fileID: 482721055}
 --- !u!65 &1035810120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73222,6 +73225,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBeforeTeleport: 2
   teleportSound: {fileID: 8300000, guid: 24390bd70dbd0ad469496a265e6160cb, type: 3}
+  bathroomVolumes:
+  - {fileID: 371780331}
+  - {fileID: 482721055}
 --- !u!65 &1997330336
 BoxCollider:
   m_ObjectHideFlags: 0

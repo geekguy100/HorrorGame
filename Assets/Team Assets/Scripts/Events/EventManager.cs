@@ -20,6 +20,9 @@ public static class EventManager
 
     public static event Action OnTryQuitGame;
 
+    public static event Action OnMirrorTeleport;
+    public static event Action OnTeleportEnd;
+
     /// <summary>
     /// Invoked when the player interacts with an IInteractable.
     /// </summary>
@@ -65,5 +68,15 @@ public static class EventManager
     public static void JournalComplete()
     {
         OnJournalComplete?.Invoke();
+    }
+
+    public static void MirrorTeleport()
+    {
+        OnMirrorTeleport?.Invoke();
+    }
+
+    public static void TeleportEnd()
+    {
+        OnTeleportEnd?.Invoke();
     }
 }

@@ -6,6 +6,7 @@
 // Brief Description : Behaviour for interacting with the restroom mirrors
 *****************************************************************************/
 using UnityEngine;
+using UnityEngine.Rendering;
 using System.Collections;
 
 public class RestroomMirror : MonoBehaviour, IInteractable
@@ -18,6 +19,8 @@ public class RestroomMirror : MonoBehaviour, IInteractable
     [SerializeField] private float timeBeforeTeleport = 2f;
 
     [SerializeField] private AudioClip teleportSound;
+
+    [SerializeField] private Volume[] bathroomVolumes;
 
     public void InRangeAction(GameObject interactor)
     {
@@ -52,11 +55,30 @@ public class RestroomMirror : MonoBehaviour, IInteractable
     /// </summary>
     public void Teleport(Transform teleportTransform)
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(TP(teleportTransform));
+    }
 
+    private IEnumerator TP(Transform teleportTransform)
+    {
+        EventManager.MirrorTeleport();
+
+        float initialValue = VolumeHandler.GetFogDepth();
+
+        EventAudioManager.instance.PlayOneShot(teleportSound);
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<PlayerInput>().enabled = false;
-        player.transform.position = teleportTransform.position;
+
+        StartCoroutine(VolumeHandler.SetFogOverTime(bathroomVolumes, 1f, timeBeforeTeleport));
+        yield return new WaitForSeconds(timeBeforeTeleport);
+
+        Vector3 pos = new Vector3(teleportTransform.position.x, player.transform.position.y, teleportTransform.position.z);
+        player.transform.position = pos;
+        yield return new WaitForSeconds(0.25f);
         player.GetComponent<PlayerInput>().enabled = true;
+
+        StartCoroutine(VolumeHandler.SetFogOverTime(bathroomVolumes, initialValue, timeBeforeTeleport));
+        EventManager.TeleportEnd();
     }
     
     #endregion
