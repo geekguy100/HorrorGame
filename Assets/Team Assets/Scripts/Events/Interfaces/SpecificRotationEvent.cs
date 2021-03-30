@@ -37,7 +37,7 @@ public abstract class SpecificRotationEvent : MonoBehaviour, InGameEvent
 
         if (distance < rotationForgiveness)
         {
-            RunEvent();
+            RunEvent(player);
             return true;
         }
 
@@ -48,5 +48,5 @@ public abstract class SpecificRotationEvent : MonoBehaviour, InGameEvent
     /// Invoked when the player is rotated properly;
     /// what the event does.
     /// </summary>
-    protected abstract void RunEvent();
+    protected abstract void RunEvent(GameObject player);
 }

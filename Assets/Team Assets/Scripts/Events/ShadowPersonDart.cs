@@ -18,7 +18,7 @@ public class ShadowPersonDart : SpecificRotationEvent
     /// <summary>
     /// Invoked when the player is rotated properly.
     /// </summary>
-    protected override void RunEvent()
+    protected override void RunEvent(GameObject player)
     {
         shadowPersonAnimator.gameObject.SetActive(true);
         shadowPersonAnimator.SetTrigger("Dart");
