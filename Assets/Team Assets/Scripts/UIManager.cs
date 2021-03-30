@@ -6,12 +6,17 @@
 // Brief Description : Class to handle updating UI.
 *****************************************************************************/
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
     [Tooltip("The UI panel that displays the list of locations to teleport to.")]
     [SerializeField] private GameObject teleportPanel;
+
+    [SerializeField] private TextMeshProUGUI pageNotification;
+    [SerializeField] private TextMeshProUGUI winText;
 
 
     private List<UIWindow> openWindows = new List<UIWindow>();
@@ -23,6 +28,9 @@ public class UIManager : MonoBehaviour
         EventManager.OnMirrorInteracted += ToggleTeleportUI;
         EventManager.OnOpenUIWindow += AddOpenWindow;
         EventManager.OnCloseUIWindow += RemoveOpenWindow;
+        EventManager.OnPagePickup += TogglePageNotification;
+
+        EventManager.OnJournalComplete += ToggleWinText;
     }
 
     private void OnDisable()
@@ -30,6 +38,9 @@ public class UIManager : MonoBehaviour
         EventManager.OnMirrorInteracted -= ToggleTeleportUI;
         EventManager.OnOpenUIWindow -= AddOpenWindow;
         EventManager.OnCloseUIWindow -= RemoveOpenWindow;
+        EventManager.OnPagePickup -= TogglePageNotification;
+
+        EventManager.OnJournalComplete -= ToggleWinText;
     }
 
     #endregion
@@ -65,6 +76,25 @@ public class UIManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             return false;
         }
+    }
+
+    private void TogglePageNotification(JournalPage page)
+    {
+        pageNotification.text = "Collected Page " + page.id;
+        pageNotification.gameObject.SetActive(true);
+        StartCoroutine(WaitThenDisable(pageNotification.gameObject, 2f));
+    }
+
+    private void ToggleWinText()
+    {
+        winText.gameObject.SetActive(true);
+        StartCoroutine(WaitThenDisable(winText.gameObject, 5f));
+    }
+
+    private IEnumerator WaitThenDisable(GameObject obj, float time)
+    {
+        yield return new WaitForSeconds(time);
+        obj.SetActive(false);
     }
 
     /// <summary>

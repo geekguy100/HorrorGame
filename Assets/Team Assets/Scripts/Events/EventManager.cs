@@ -13,6 +13,7 @@ public static class EventManager
     public static event Predicate<bool> OnMirrorInteracted;
 
     public static event Action<JournalPage> OnPagePickup;
+    public static event Action OnJournalComplete;
 
     public static event Action<UIWindow> OnOpenUIWindow;
     public static event Action<UIWindow> OnCloseUIWindow;
@@ -59,5 +60,10 @@ public static class EventManager
     public static void TryQuitGame()
     {
         OnTryQuitGame?.Invoke();
+    }
+
+    public static void JournalComplete()
+    {
+        OnJournalComplete?.Invoke();
     }
 }

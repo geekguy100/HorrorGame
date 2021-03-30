@@ -11,6 +11,8 @@ using UnityEngine.UI;
 public class Journal : UIWindow
 {
     [SerializeField] private Image[] entrySpots;
+    private int totalPages;
+    private int foundPages = 0;
 
     private Sprite[] documentSprites;
     [SerializeField] private Image documentArea;
@@ -32,6 +34,7 @@ public class Journal : UIWindow
     private void Start()
     {
         documentSprites = new Sprite[entrySpots.Length];
+        totalPages = documentSprites.Length;
     }
 
     public override void OpenWindow()
@@ -49,7 +52,6 @@ public class Journal : UIWindow
 
     public override void CloseWindow()
     {
-        print("JOURNAL CLOSING");
         base.CloseWindow();
 
         journalOpen = false;
@@ -69,9 +71,12 @@ public class Journal : UIWindow
 
     private void AddPage(JournalPage page)
     {
-        print("ADDED PAGE");
+        ++foundPages;
         entrySpots[page.id - 1].sprite = page.iconSprite;
         documentSprites[page.id - 1] = page.documentSprite;
         entrySpots[page.id - 1].enabled = true;
+
+        if (foundPages >= totalPages)
+            EventManager.JournalComplete();
     }
 }

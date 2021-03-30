@@ -39,10 +39,14 @@ public class NotePickup : MonoBehaviour, IInteractable
         print("Note pickup");
         JournalPage page = new JournalPage(id, documentSprite, iconSprite);
         EventManager.PagePickup(page);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public void OutOfRangeAction(GameObject interactor)
     {
+        if (gameObject.activeInHierarchy)
+            noteOutline.SetActive(false);
+        else
+            Destroy(gameObject);
     }
 }
