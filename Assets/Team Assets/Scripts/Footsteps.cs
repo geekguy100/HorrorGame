@@ -26,22 +26,22 @@ public class Footsteps : MonoBehaviour
     // The distance the character has traveled.
     private float distanceTraveled = 0f;
 
-    private void Update()
-    {
-        if (characterMovement.IsMoving())
-        {
-            distanceTraveled += Time.deltaTime * characterMovement.GetSpeed();
-            if (distanceTraveled > requiredDistance)
-            {
-                PlayRandomFootstep();
-                distanceTraveled = 0f;
-            }
-        }
-        else if (distanceTraveled != 0f)
-            distanceTraveled = 0f;
-    }
+    //private void Update()
+    //{
+    //    if (characterMovement.IsMoving())
+    //    {
+    //        distanceTraveled += Time.deltaTime * characterMovement.GetSpeed();
+    //        if (distanceTraveled > requiredDistance)
+    //        {
+    //            PlayRandomFootstep();
+    //            distanceTraveled = 0f;
+    //        }
+    //    }
+    //    else if (distanceTraveled != 0f)
+    //        distanceTraveled = 0f;
+    //}
 
-    private void PlayRandomFootstep()
+    public void PlayRandomFootstep()
     {
         AudioClip clip = AudioClipHepler.GetRandomAudioClipFromSet(footstepClips);
         audioSource.PlayOneShot(clip);

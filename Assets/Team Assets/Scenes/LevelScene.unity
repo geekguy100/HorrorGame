@@ -73026,33 +73026,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3918114201081970783, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: requiredDistance
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4220584989347107669, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4220584989347107669, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4220584989347107688, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
       propertyPath: m_RootOrder
       value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220584989347107688, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220584989347107688, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220584989347107688, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4220584989347107688, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73093,42 +73073,6 @@ PrefabInstance:
     - target: {fileID: 4220584989347107688, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220584989347107691, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220584989347107693, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: amplitude
-      value: 0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220584989347107693, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: frequency
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220584990782340548, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: m_InnerSpotPercent
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220584990782340548, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: m_UseContactShadow.m_Level
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220584990782340548, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: m_UseContactShadow.m_UseOverride
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220584990782340551, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: m_Cookie
-      value: 
-      objectReference: {fileID: 2800000, guid: c3097fbf5286afe4692f9d336db11daa, type: 3}
-    - target: {fileID: 4220584990782340551, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: m_SpotAngle
-      value: 89.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4220584990782340551, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
-      propertyPath: m_Shadows.m_Type
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6112139878078419292, guid: 67c13648433b8fb45bd52daab7f91f92, type: 3}
       propertyPath: journal

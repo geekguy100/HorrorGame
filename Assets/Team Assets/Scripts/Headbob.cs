@@ -17,6 +17,7 @@ public class Headbob : MonoBehaviour
     private Transform head;
     private Vector3 headPosLocal;
     private float startingYPos;
+    private Animator anim;
 
     // Keeps track of the time the player's been moving.
     // Used as input for Mathf.Sin().
@@ -32,6 +33,7 @@ public class Headbob : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         mouseLook = GetComponent<MouseLook>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -44,26 +46,28 @@ public class Headbob : MonoBehaviour
     private void Update()
     {
         // Bob the head if the player is moving.
-        if (playerInput.IsMoving())
+        if (playerInput.IsMoving() && !anim.GetBool("Walking"))
         {
-            IncrementCounter();
-            headPosLocal.y = (Mathf.Sin(counter * frequency) * amplitude) + startingYPos;
-            head.localPosition = headPosLocal;
+            //IncrementCounter();
+            //headPosLocal.y = (Mathf.Sin(counter * frequency) * amplitude) + startingYPos;
+            //head.localPosition = headPosLocal;
+            anim.SetBool("Walking", true);
         }
-        else if (headPosLocal.y != startingYPos)
+        else if (!playerInput.IsMoving() && anim.GetBool("Walking"))
         {
-            headPosLocal.y = startingYPos;
-            head.localPosition = headPosLocal;
+            //headPosLocal.y = startingYPos;
+            //head.localPosition = headPosLocal;
+            anim.SetBool("Walking", false);
         }
     }
 
-    private void IncrementCounter()
-    {
-        counter += Time.deltaTime;
+    //private void IncrementCounter()
+    //{
+    //    counter += Time.deltaTime;
 
-        // Just to make sure the counter doesn't count up too high,
-        // we'll set it back to 0 if it reaches full circle, or 360.
-        if (counter > 360f)
-            counter = 0;
-    }
+    //    // Just to make sure the counter doesn't count up too high,
+    //    // we'll set it back to 0 if it reaches full circle, or 360.
+    //    if (counter > 360f)
+    //        counter = 0;
+    //}
 }
