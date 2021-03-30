@@ -52,31 +52,12 @@ public class RestroomMirror : MonoBehaviour, IInteractable
     /// </summary>
     public void Teleport(Transform teleportTransform)
     {
-        StartCoroutine(TeleportToMirror(teleportTransform));
-    }
-    
-    /// <summary>
-    /// Teleports the interactor to the specified Transform's position.
-    /// </summary>
-    /// <param name="teleportTransform">The Transform to teleport to.</param>
-    private IEnumerator TeleportToMirror(Transform teleportTransform)
-    {
-        displayingUI = EventManager.MirrorInteracted(false);
-        EventAudioManager.instance.PlayOneShot(teleportSound);
-        teleporting = true;
-        // TODO: Fancy effects and whatnot.
-
-        float initialFogDepth = VolumeHandler.GetFogDepth();
-        StartCoroutine(VolumeHandler.SetFogOverTime(1f, timeBeforeTeleport));
-        yield return new WaitForSeconds(timeBeforeTeleport);
-
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        Vector3 pos = new Vector3(teleportTransform.position.x, player.transform.position.y, teleportTransform.position.z);
-        player.transform.position = pos;
-
-        StartCoroutine(VolumeHandler.SetFogOverTime(initialFogDepth, 3f));
-        teleporting = false;
+        player.GetComponent<PlayerInput>().enabled = false;
+        player.transform.position = teleportTransform.position;
+        player.GetComponent<PlayerInput>().enabled = true;
     }
+    
     #endregion
 }
