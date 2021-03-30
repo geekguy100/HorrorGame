@@ -43,6 +43,9 @@ public static class VolumeHandler
         if (fog == null)
             yield break;
 
+        currentVolume.gameObject.SetActive(false);
+        currentVolume.gameObject.SetActive(true);
+
         float initalValue = fog.meanFreePath.value;
         float counter = 0;
         while (counter < time)

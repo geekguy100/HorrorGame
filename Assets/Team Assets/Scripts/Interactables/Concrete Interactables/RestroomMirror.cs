@@ -65,11 +65,17 @@ public class RestroomMirror : MonoBehaviour, IInteractable
         EventAudioManager.instance.PlayOneShot(teleportSound);
         teleporting = true;
         // TODO: Fancy effects and whatnot.
+
         float initialFogDepth = VolumeHandler.GetFogDepth();
         StartCoroutine(VolumeHandler.SetFogOverTime(1f, timeBeforeTeleport));
         yield return new WaitForSeconds(timeBeforeTeleport);
-        interactor.transform.position = teleportTransform.position;
-        StartCoroutine(VolumeHandler.SetFogOverTime(initialFogDepth, 2f));
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        Vector3 pos = new Vector3(teleportTransform.position.x, player.transform.position.y, teleportTransform.position.z);
+        player.transform.position = pos;
+
+        StartCoroutine(VolumeHandler.SetFogOverTime(initialFogDepth, 3f));
         teleporting = false;
     }
     #endregion

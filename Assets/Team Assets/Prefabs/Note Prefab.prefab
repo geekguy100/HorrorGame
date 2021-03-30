@@ -107,9 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteOutline: {fileID: 2128993340}
-  id: -1
-  documentSprite: {fileID: 0}
-  iconSprite: {fileID: 0}
+  id: 1
+  documentSprite: {fileID: 21300000, guid: 562a5663687a771418b006a1c666dc3c, type: 3}
+  iconSprite: {fileID: 21300000, guid: 58c35b7faffa9c9408e5e6f221ed0fd0, type: 3}
 --- !u!1001 &5690685754630529395
 PrefabInstance:
   m_ObjectHideFlags: 0

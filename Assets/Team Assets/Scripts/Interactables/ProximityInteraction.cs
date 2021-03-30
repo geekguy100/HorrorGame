@@ -17,9 +17,21 @@ public class ProximityInteraction : MonoBehaviour
         interactor = GetComponent<IInteractor>();
     }
 
-    private void OnTriggerEnter(Collider col)
+    //private void OnTriggerEnter(Collider col)
+    //{
+    //    // If we walking into an IInteractable, let us be able to interact with it.
+    //    IInteractable interactable = col.GetComponent<IInteractable>();
+    //    if (interactable != null)
+    //    {
+    //        interactor.SetInteractable(interactable);
+    //    }
+    //}
+
+    private void OnTriggerStay(Collider col)
     {
-        // If we walking into an IInteractable, let us be able to interact with it.
+        if (interactor.GetInteractable() != null)
+            return;
+
         IInteractable interactable = col.GetComponent<IInteractable>();
         if (interactable != null)
         {
