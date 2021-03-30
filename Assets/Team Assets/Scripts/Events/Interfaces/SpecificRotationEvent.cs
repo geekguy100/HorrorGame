@@ -30,10 +30,16 @@ public abstract class SpecificRotationEvent : MonoBehaviour, InGameEvent
         if (playerCamera == null)
             playerCamera = player.transform.GetChild(0);
 
-        float distance = Vector3.Distance(playerCamera.rotation.eulerAngles, requiredRotation);
-        //print(distance);
-        
-        //print(distance);
+        Vector3 rot = playerCamera.rotation.eulerAngles;
+        if (rot.x < 0)
+            rot.x += 360f;
+        if (rot.y < 0)
+            rot.y += 360f;
+        if (rot.z < 0)
+            rot.z += 360f;
+
+        float distance = Vector3.Distance(rot, requiredRotation);
+        print(distance);
 
         if (distance < rotationForgiveness)
         {
