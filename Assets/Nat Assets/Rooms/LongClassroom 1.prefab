@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 1013956673152160448}
   - component: {fileID: 7767689197174234112}
   - component: {fileID: 1577655294175827328}
+  - component: {fileID: 8978944499988204102}
   m_Layer: 0
   m_Name: WoodFloor (51)
   m_TagString: Untagged
@@ -162,6 +163,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8978944499988204102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164492023732080386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.03}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.000000004656613}
 --- !u!1 &707518582484833723
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +187,7 @@ GameObject:
   - component: {fileID: 2870056866148364088}
   - component: {fileID: 69989408949325913}
   - component: {fileID: 6121535394284962820}
+  - component: {fileID: 4457549255332255775}
   m_Layer: 0
   m_Name: WoodFloor (48)
   m_TagString: Untagged
@@ -243,6 +258,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4457549255332255775
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707518582484833723}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.03}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.000000004656613}
 --- !u!1 &954514677215519809
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +377,7 @@ GameObject:
   - component: {fileID: 3549004559947022938}
   - component: {fileID: 6162226623179912694}
   - component: {fileID: 4871401692147298675}
+  - component: {fileID: 719758375078219694}
   m_Layer: 0
   m_Name: WoodFloor (53)
   m_TagString: Untagged
@@ -419,6 +448,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &719758375078219694
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023893693325327076}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.029999997}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.0000000046566124}
 --- !u!1 &1178468072162376418
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +938,7 @@ GameObject:
   - component: {fileID: 3118595563015735529}
   - component: {fileID: 2083092611348203340}
   - component: {fileID: 4254871373655470982}
+  - component: {fileID: 4971411773695658886}
   m_Layer: 0
   m_Name: WoodFloor (41)
   m_TagString: Untagged
@@ -966,6 +1009,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4971411773695658886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2309408212729320019}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.03}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.000000004656613}
 --- !u!1 &2341335983846556900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,7 +1130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2470576736507114708}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 45.17, y: 21.172293, z: 7.308651}
+  m_LocalPosition: {x: 45.4, y: 21.172293, z: 7.308651}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1096749344997263350}
@@ -1153,6 +1209,7 @@ GameObject:
   - component: {fileID: 4924591359552361707}
   - component: {fileID: 3748615955668448976}
   - component: {fileID: 5739692944011949134}
+  - component: {fileID: 8681479476245349030}
   m_Layer: 0
   m_Name: WoodFloor (50)
   m_TagString: Untagged
@@ -1223,6 +1280,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8681479476245349030
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3166871421211122236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.029999997}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.0000000046566124}
 --- !u!1 &3301598112253741559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,7 +1401,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3376614628675538598}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 45.17, y: 21.172293, z: 4.3306503}
+  m_LocalPosition: {x: 45.4, y: 21.172293, z: 4.3306503}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1096749344997263350}
@@ -1410,6 +1480,7 @@ GameObject:
   - component: {fileID: 5072594128858127259}
   - component: {fileID: 8443367242197876067}
   - component: {fileID: 333829452274906141}
+  - component: {fileID: 524065707710885509}
   m_Layer: 0
   m_Name: WoodFloor (55)
   m_TagString: Untagged
@@ -1480,6 +1551,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &524065707710885509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3595636924419060920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.03}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.000000004656613}
 --- !u!1 &3757997021097645903
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,6 +1575,7 @@ GameObject:
   - component: {fileID: 7380841109863161106}
   - component: {fileID: 3375523244902034933}
   - component: {fileID: 2570515359552010364}
+  - component: {fileID: 7220584777921501234}
   m_Layer: 0
   m_Name: WoodFloor (54)
   m_TagString: Untagged
@@ -1561,6 +1646,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7220584777921501234
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3757997021097645903}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.03}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.000000004656613}
 --- !u!1 &4026794608470134574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1670,7 @@ GameObject:
   - component: {fileID: 859329315273853415}
   - component: {fileID: 4675772271057771417}
   - component: {fileID: 7899489825110266057}
+  - component: {fileID: 8379863593265604919}
   m_Layer: 0
   m_Name: WoodFloor (49)
   m_TagString: Untagged
@@ -1642,6 +1741,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8379863593265604919
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026794608470134574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.03}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.000000004656613}
 --- !u!1 &4214478700676925796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,6 +1955,7 @@ GameObject:
   - component: {fileID: 3579948290311319755}
   - component: {fileID: 432718942516739950}
   - component: {fileID: 2442539637757578148}
+  - component: {fileID: 3049714371418779103}
   m_Layer: 0
   m_Name: WoodFloor (39)
   m_TagString: Untagged
@@ -1913,6 +2026,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3049714371418779103
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243895720512694897}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.03}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.000000004656613}
 --- !u!1 &4593678444752531103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,6 +2740,7 @@ GameObject:
   - component: {fileID: 8146210212612560040}
   - component: {fileID: 3591659463427395808}
   - component: {fileID: 5571295731741624362}
+  - component: {fileID: 5348908693579791968}
   m_Layer: 0
   m_Name: WoodFloor (56)
   m_TagString: Untagged
@@ -2684,6 +2811,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5348908693579791968
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6883502523295330026}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.029999997}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.0000000046566124}
 --- !u!1 &7036357694956279404
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,6 +2835,7 @@ GameObject:
   - component: {fileID: 6356193488125950545}
   - component: {fileID: 2737598374996229085}
   - component: {fileID: 3515824072238140840}
+  - component: {fileID: 7860747105453044526}
   m_Layer: 0
   m_Name: WoodFloor (52)
   m_TagString: Untagged
@@ -2765,6 +2906,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7860747105453044526
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7036357694956279404}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.03}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.000000004656613}
 --- !u!1 &7214706544856793130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2968,7 +3122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8070653318627098736}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 45.17, y: 21.172293, z: 10.30965}
+  m_LocalPosition: {x: 45.4, y: 21.172293, z: 10.30965}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 1096749344997263350}
@@ -3209,6 +3363,7 @@ GameObject:
   - component: {fileID: 8596550420962375824}
   - component: {fileID: 4675526528031618869}
   - component: {fileID: 7423684614623691775}
+  - component: {fileID: 4187872623657122824}
   m_Layer: 0
   m_Name: WoodFloor (38)
   m_TagString: Untagged
@@ -3279,6 +3434,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4187872623657122824
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8937047815197172266}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.0050000055, z: 0.029999997}
+  m_Center: {x: -0.000000009313226, y: -0.0025000102, z: -0.0000000046566124}
 --- !u!1 &9026662239855386615
 GameObject:
   m_ObjectHideFlags: 0
