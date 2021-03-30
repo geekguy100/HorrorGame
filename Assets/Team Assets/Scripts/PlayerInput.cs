@@ -23,12 +23,12 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
         input = new Vector3(h, 0, v);
         input = transform.TransformDirection(input);
 
-        characterMovement.Move(input);
+        characterMovement.Move(input.normalized);
     }
 
     /// <summary>
