@@ -7,17 +7,27 @@
 *****************************************************************************/
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            LoadScene("TitleScene");
+        EventManager.OnTryQuitGame += ReturnToMenu;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnTryQuitGame -= ReturnToMenu;
     }
 
     private void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    private void ReturnToMenu()
+    {
+        LoadScene("TitleScene");
     }
 }

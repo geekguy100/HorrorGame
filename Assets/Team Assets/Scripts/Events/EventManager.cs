@@ -14,6 +14,11 @@ public static class EventManager
 
     public static event Action<JournalPage> OnPagePickup;
 
+    public static event Action<UIWindow> OnOpenUIWindow;
+    public static event Action<UIWindow> OnCloseUIWindow;
+
+    public static event Action OnTryQuitGame;
+
     /// <summary>
     /// Invoked when the player interacts with an IInteractable.
     /// </summary>
@@ -39,5 +44,20 @@ public static class EventManager
     public static void PagePickup(JournalPage page)
     {
         OnPagePickup?.Invoke(page);
+    }
+
+    public static void OpenUIWindow(UIWindow window)
+    {
+        OnOpenUIWindow?.Invoke(window);
+    }
+
+    public static void CloseUIWindow(UIWindow window)
+    {
+        OnCloseUIWindow?.Invoke(window);
+    }
+
+    public static void TryQuitGame()
+    {
+        OnTryQuitGame?.Invoke();
     }
 }

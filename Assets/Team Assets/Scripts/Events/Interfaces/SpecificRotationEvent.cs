@@ -12,6 +12,10 @@ public abstract class SpecificRotationEvent : MonoBehaviour, InGameEvent
     [Tooltip("The rotation required by the player to execute the event.")]
     [SerializeField] private Vector3 requiredRotation;
 
+    [Tooltip("How 'uncentered' the player's rotation can be from the required rotation; A higher value means" +
+        " the player's rotation can be more uncentered / less on point.")]
+    [SerializeField] private float rotationForgiveness = 7f;
+
     // The camera attached to the player.
     private Transform playerCamera = null;
 
@@ -31,7 +35,7 @@ public abstract class SpecificRotationEvent : MonoBehaviour, InGameEvent
         
         //print(distance);
 
-        if (distance < 7f)
+        if (distance < rotationForgiveness)
         {
             RunEvent();
             return true;

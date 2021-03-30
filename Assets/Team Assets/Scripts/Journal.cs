@@ -8,7 +8,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Journal : MonoBehaviour
+public class Journal : UIWindow
 {
     [SerializeField] private Image[] entrySpots;
 
@@ -16,6 +16,7 @@ public class Journal : MonoBehaviour
     [SerializeField] private Image documentArea;
 
     private bool journalOpen = false;
+    public bool isOpen { get { return journalOpen; } }
 
 
     private void OnEnable()
@@ -33,24 +34,31 @@ public class Journal : MonoBehaviour
         documentSprites = new Sprite[entrySpots.Length];
     }
 
-    public void OpenJournal()
+    public override void OpenWindow()
     {
-        journalOpen = !journalOpen;
+        base.OpenWindow();
 
-        GetComponent<CanvasGroup>().alpha = System.Convert.ToInt16(journalOpen);
+        journalOpen = true;
 
-        if (journalOpen)
-        {
-            Time.timeScale = 0;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            Time.timeScale = 1;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        GetComponent<CanvasGroup>().alpha = 1;
+
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public override void CloseWindow()
+    {
+        print("JOURNAL CLOSING");
+        base.CloseWindow();
+
+        journalOpen = false;
+
+        GetComponent<CanvasGroup>().alpha = 0;
+
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void DisplayPage(int id)

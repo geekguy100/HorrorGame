@@ -13,7 +13,10 @@ public class PlayerJournalInput : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
-            journal.OpenJournal();
+        if (Input.GetKeyDown(KeyCode.J) && !journal.isOpen)
+            journal.OpenWindow();
+        else if (Input.GetKeyDown(KeyCode.J))
+            journal.CloseWindow();
+        
     }
 }
